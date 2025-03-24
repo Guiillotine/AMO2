@@ -14,8 +14,7 @@ X_test = data_test.drop('cut', axis=1)
 # Выполнение предсказаний
 y_pred = model.predict(X_test)
 
-predicted_val = y_pred[0]
-true_val = y_test[0]
-
-
-print(predicted_val, true_val)
+for i in range(25, 30):
+    predicted_val = y_pred[i][0]
+    true_val = y_test[i]
+    print(f"fact: {predicted_val} | predicted: {true_val} | delta: {true_val-predicted_val}")
